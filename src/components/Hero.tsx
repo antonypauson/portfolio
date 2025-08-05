@@ -1,7 +1,8 @@
 import { useEffect, useState, useRef } from "react";
 import FOG from "vanta/dist/vanta.fog.min";
 import * as THREE from "three";
-import HeadingTypewriter from "./TypeWriter";
+import HeadingTypewriter from "./HeadingTypeWriter";
+import Subheading from "./Subheading";
 
 export default function Hero() {
   const vantaRef = useRef(null);
@@ -36,11 +37,12 @@ export default function Hero() {
   }, []);
 
   return (
-    <div ref={vantaRef} className="min-h-screen">
-      <h1 className="text-[10rem] font-semibold">
-        <HeadingTypewriter /> SUN
-      </h1>
-      <h4></h4>
+    <div
+      ref={vantaRef}
+      className="min-h-screen flex flex-col justify-center items-center md:items-start"
+    >
+      <HeadingTypewriter />
+      <Subheading />
     </div>
   );
 }
