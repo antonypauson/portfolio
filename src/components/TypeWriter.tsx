@@ -4,23 +4,22 @@ export default function HeadingTypewriter() {
     return (
       <h1>
         <Typewriter
-          className="text-white"
           onInit={(typewriter) => {
             typewriter
-              .typeString("Developer") // English
+              .typeString("एंटोनी")
               .pauseFor(1500)
               .deleteAll()
-              .typeString("Writer") // Japanese
+              .typeString("ആൻ്റണി")
               .pauseFor(1500)
               .deleteAll()
-              .typeString("") // Arabic
-              .pauseFor(1500)
+              .typeString("Antony")
+              .pauseFor(6000)
               .deleteAll()
-              .start(); // You can remove this `.start()` if you're controlling it differently
+              .start(); 
           }}
           options={{
-            loop: true, // or false for one-time
-            delay: 75, // typing speed
+            loop: true, 
+            delay: 75, 
             deleteSpeed: 50,
             autoStart: true,
           }}

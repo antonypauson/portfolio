@@ -4,31 +4,12 @@ import * as THREE from "three";
 import HeadingTypewriter from "./TypeWriter";
 
 export default function Hero() {
-  const [name, setName] = useState("ആൻ്റണി");
-  useEffect(() => {
-    const timer1 = setTimeout(() => {
-      setName("एंटोनी");
-    }, 1000);
-
-    const timer2 = setTimeout(() => {
-      setName("Antony");
-    }, 2000);
-
-    return () => {
-      clearTimeout(timer1);
-      clearTimeout(timer2);
-    };
-  }, []);
-
   const vantaRef = useRef(null);
-
   useEffect(() => {
     let vantaEffect: any;
-
     if (!window.THREE) {
-        window.THREE = THREE;
-   }
-
+      window.THREE = THREE;
+    }
     if (vantaRef.current) {
       vantaEffect = FOG({
         el: vantaRef.current,
@@ -38,16 +19,15 @@ export default function Hero() {
         gyroControls: false,
         minHeight: 200.0,
         minWidth: 200.0,
-        highlightColor: 0x6e0250,
-        midtoneColor: 0x840e0e,
-        lowlightColor: 0x9d5309,
-        baseColor: 0xd46415,
+        highlightColor: 0xf7cb40,
+        midtoneColor: 0xe81e6f,
+        lowlightColor: 0xeb8017,
+        baseColor: 0xe14220,
         blurFactor: 0.62,
         speed: 2.6,
         zoom: 0.4,
       });
     }
-
     return () => {
       if (vantaEffect) {
         vantaEffect.destroy();
@@ -55,13 +35,12 @@ export default function Hero() {
     };
   }, []);
 
-
   return (
-    <div ref={vantaRef} className="bg-amber-300 min-h-screen ">
-      <h1>{name}</h1>
-      <h4>
-        <HeadingTypewriter />
-      </h4>
+    <div ref={vantaRef} className="min-h-screen">
+      <h1 className="text-[10rem] font-semibold">
+        <HeadingTypewriter /> SUN
+      </h1>
+      <h4></h4>
     </div>
   );
 }
