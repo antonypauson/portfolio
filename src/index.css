@@ -1,1 +1,6 @@
 @import "tailwindcss";
+
+:root {
+    font-family: "Bricolage Grotesque", sans-serif;
+    --font-normal: "IBM Plex Sans", sans-serif;
+}
