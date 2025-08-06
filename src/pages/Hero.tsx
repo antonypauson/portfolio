@@ -39,7 +39,7 @@ export default function Hero() {
   return (
     <div
       ref={vantaRef}
-      className="min-h-screen flex flex-col justify-center items-center md:items-start"
+      className="h-screen flex flex-col justify-center items-center md:items-start relative"
     >
       <HeadingTypewriter />
       <Subheading />

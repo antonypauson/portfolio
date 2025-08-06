@@ -1,14 +1,15 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { useState } from "react";
 import Navbar from "./components/Navbar";
 import Hero from "./pages/Hero";
 import AboutMe from "./pages/AboutMe";
 
 export default function App() {
-  return (
-    // <div className="min-h-screen">
+  const [iconTrue, setIconTrue] = useState(true);
 
+  return (
     <Router>
-      <Navbar />
+      <Navbar setIconTrue={setIconTrue} iconTrue={iconTrue}/>
       <Routes>
         <Route path="/" element={<Hero />} />
         <Route path="/about-me" element={<AboutMe />} />
