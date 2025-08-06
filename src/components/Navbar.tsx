@@ -12,9 +12,9 @@ export default function Navbar({setIconTrue, iconTrue}) {
     ];
 
     return (
-      <nav className="absolute top-0 inset-x-0 z-10 p-4 bg-transparent flex justify-between items-center">
+      <nav className="absolute top-0 inset-x-0 z-10 p-4 bg-transparent flex justify-between items-center mx-2 md:mx-5">
         <div>
-          <img className="w-8 md:w-12" src={iconTrue ? sunIcon : moonIcon} onClick={() => setIconTrue(!iconTrue)} />
+          <img className="w-8 md:w-12 cursor-pointer" src={iconTrue ? sunIcon : moonIcon} onClick={() => setIconTrue(!iconTrue)} />
         </div>
         <div className="flex gap-3 px-1.5 md:gap-5 md:px-5.5 md:text-2xl">
           {navContents.map((content, index) => (

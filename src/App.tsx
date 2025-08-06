@@ -11,7 +11,7 @@ export default function App() {
     <Router>
       <Navbar setIconTrue={setIconTrue} iconTrue={iconTrue}/>
       <Routes>
-        <Route path="/" element={<Hero />} />
+        <Route path="/" element={<Hero iconTrue={iconTrue}/>} />
         <Route path="/about-me" element={<AboutMe />} />
       </Routes>
     </Router>
