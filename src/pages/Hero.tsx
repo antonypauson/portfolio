@@ -1,8 +1,8 @@
 import { useEffect, useState, useRef } from "react";
 import FOG from "vanta/dist/vanta.fog.min";
 import * as THREE from "three";
-import HeadingTypewriter from "./HeadingTypeWriter";
-import Subheading from "./Subheading";
+import HeadingTypewriter from "../components/HeadingTypeWriter";
+import Subheading from "../components/Subheading";
 
 export default function Hero() {
   const vantaRef = useRef(null);
