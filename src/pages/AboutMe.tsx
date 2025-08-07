@@ -35,7 +35,7 @@ function SectionOne() {
         {techStack.map((each) => (
           <div
             key={each.name}
-            className="bg-zinc-700 p-5 rounded-lg flex flex-col items-center justify-center w-24 h-24 md:w-20 md:h-20 lg:w-24 lg:h-24 text-sm group "
+            className="bg-zinc-700 p-5 rounded-lg flex flex-col items-center justify-center md:w-24 md:h-24 w-20 h-20 lg:w-24 lg:h-24 text-sm group "
           >
             <img
               src={each.icon}
