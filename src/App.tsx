@@ -4,6 +4,7 @@ import Navbar from "./components/Navbar";
 import Hero from "./pages/Hero";
 import AboutMe from "./pages/AboutMe";
 import Contact from "./pages/Contact"; 
+import Projects from "./pages/Projects"; 
 
 export default function App() {
   const [iconTrue, setIconTrue] = useState(true);
@@ -15,6 +16,7 @@ export default function App() {
         <Route path="/" element={<Hero iconTrue={iconTrue} />} />
         <Route path="/about-me" element={<AboutMe />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/projects" element={<Projects />} />
       </Routes>
     </Router>
   );
