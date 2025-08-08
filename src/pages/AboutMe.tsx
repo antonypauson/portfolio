@@ -58,83 +58,96 @@ function SectionOne() {
 function SectionTwo() {
   const roadmapData = [
     {
-      title: "Graduated from College",
+      title: "Graduated from College 1",
       date: "May 2025",
       icon: "icons/html.svg",
       description:
         "Finished college with a CGPA of 7.86. My major was Computer Science Engineering. ",
     },
     {
-      title: "Graduated from College",
+      title: "Graduated from College 2",
       date: "May 2025",
       icon: "icons/html.svg",
       description:
         "Finished college with a CGPA of 7.86. My major was Computer Science Engineering. ",
     },
     {
-      title: "Graduated from College",
+      title: "Graduated from College 3 ",
       date: "May 2025",
       icon: "icons/html.svg",
       description:
         "Finished college with a CGPA of 7.86. My major was Computer Science Engineering. ",
     },
     {
-      title: "Graduated from College",
+      title: "Graduated from College 4",
       date: "May 2025",
       icon: "icons/html.svg",
       description:
         "Finished college with a CGPA of 7.86. My major was Computer Science Engineering. ",
     },
     {
-      title: "Graduated from College",
+      title: "Graduated from College 5",
       date: "May 2025",
       icon: "icons/html.svg",
       description:
-        "Finished college with a CGPA of 7.86. My major was Computer Science Engineering. ",
+        "Finished college with a CGPA of 7.86. My major was Computer Science Engineering. Last",
     },
   ];
 
-  const content = roadmapData.map((each, index) => {
-
+  const content = roadmapData.slice().reverse().map((each, index) => {
     console.log("HI");
     return (
       <Fragment key={index}>
         <div
-          className={index % 2 == 0 ? "bg-white p-4 rounded-3xl shadow" : ""}
+          className={
+            index % 2 == 0
+              ? "bg-gray-500 p-5 rounded-3xl hover:-translate-y-4.5 hover:shadow-[0_0_10px_#678990] hover:bg-white duration-300 md:col-span-1"
+              : "hidden md:block"
+          }
         >
           {index % 2 == 0 && (
             <>
-              <h1>{each.title}</h1>
-              <p>{each.date}</p>
-              <p>{each.description}</p>
+              <h1 className="text-2xl font-bold">{each.title}</h1>
+              <p className="italic text-gray-400">{each.date}</p>
+              <p className="text-md leading-7">{each.description}</p>
             </>
           )}
         </div>
-        <div className="w-15">
-          <img src={each.icon} className="w-10" />
+        <div className="md:flex hidden">
+          {/* <img src={each.icon} className="w-8" /> */}
+          <img
+            className={index === 0 ? "opacity-0" : "opacity-100 w-20"}
+            src={
+              index > 0 &&
+              (index % 2 !== 0
+                ? "icons/arrow-left.svg"
+                : "icons/arrow-right.svg")
+            }
+          />
         </div>
         <div
           className={
-            index % 2 !== 0 ? "bg-amber-200 p-4 rounded-3xl shadow" : ""
+            index % 2 !== 0
+              ? "bg-gray-500 p-4 rounded-3xl hover:-translate-y-4.5 hover:shadow-[0_0_10px_#678990] hover:bg-white duration-300 md:col-span-1"
+              : "hidden md:block"
           }
         >
           {index % 2 !== 0 && (
             <>
-              <h1>{each.title}</h1>
-              <p>{each.date}</p>
-              <p>{each.description}</p>
+              <h1 className="text-2xl font-bold ">{each.title}</h1>
+              <p className="italic text-gray-400">{each.date}</p>
+              <p className="text-md leading-7">{each.description}</p>
             </>
           )}
         </div>
       </Fragment>
     );
-  })
+  });
 
   return (
-    <div className="min-h-screen bg-zinc-800">
-            <div className="bg-green-200 grid grid-cols-[1fr_auto_1fr] gap-6">
-
-      {content}
+    <div className="min-h-screen bg-zinc-800 ">
+      <div className="grid grid-cols-1 md:grid-cols-[1fr_auto_1fr] gap-6 p-10">
+        {content}
       </div>
     </div>
   );
