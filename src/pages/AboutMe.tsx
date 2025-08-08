@@ -1,3 +1,5 @@
+import { Fragment } from "react/jsx-runtime";
+
 function SectionOne() {
   const techStack = [
     { name: "HTML", icon: "/icons/html.svg" },
@@ -92,43 +94,50 @@ function SectionTwo() {
     },
   ];
 
+  const content = roadmapData.map((each, index) => {
+
+    console.log("HI");
+    return (
+      <Fragment key={index}>
+        <div
+          className={index % 2 == 0 ? "bg-white p-4 rounded-3xl shadow" : ""}
+        >
+          {index % 2 == 0 && (
+            <>
+              <h1>{each.title}</h1>
+              <p>{each.date}</p>
+              <p>{each.description}</p>
+            </>
+          )}
+        </div>
+        <div className="w-15">
+          <img src={each.icon} className="w-10" />
+        </div>
+        <div
+          className={
+            index % 2 !== 0 ? "bg-amber-200 p-4 rounded-3xl shadow" : ""
+          }
+        >
+          {index % 2 !== 0 && (
+            <>
+              <h1>{each.title}</h1>
+              <p>{each.date}</p>
+              <p>{each.description}</p>
+            </>
+          )}
+        </div>
+      </Fragment>
+    );
+  })
+
   return (
-    <div className="bg-gray-400 min-h-screen text-zinc-900 relative">
-      {
-        roadmapData.slice().reverse().map((each, index) => {
-          const opacityClass = index % 2 !== 0 && 'opacity-0'; 
-          const opacityClass2 = index % 2 === 0 && 'opacity-0'; 
-          return (
-            <div className="grid md:grid-cols-2 py-30 ">
-              <div
-                className={`max-w-[400px] md:w-3/4 bg-gray-200 px-10 py-5 justify-self-center ${opacityClass} relative rounded-xl grid`}
-              >
-                <div className="absolute top-1/2 right-0 transform -translate-y-1/2 translate-x-20 h-1 bg-white w-20"></div>
-                <h1 className="font-extrabold text-xl text-zinc-900">
-                  {each.title}
-                </h1>
-                <p className="italic font-light">{each.date}</p>
-                <p className="text-md">{each.description}</p>
-                <img src={each.icon} className="w-15 justify-self-center" />
-              </div>
-              <div
-                className={`w-3/4 bg-gray-200 px-10 py-5 justify-self-center ${opacityClass2} relative rounded-xl grid`}
-              >
-                <div className="absolute top-1/2 left-0 transform -translate-y-1/2 -translate-x-20 h-1 bg-white w-20"></div>
-                <h1 className="font-extrabold text-xl text-zinc-900">
-                  {each.title}
-                </h1>
-                <p className="italic font-light">{each.date}</p>
-                <p className="text-md">{each.description}</p>
-                <img src={each.icon} className="w-15 justify-self-center" />
-              </div>
-            </div>
-          );
-        })
-      }
-      <div className="absolute left-1/2 w-[2px] bg-white h-full top-0"></div>
+    <div className="min-h-screen bg-zinc-800">
+            <div className="bg-green-200 grid grid-cols-[1fr_auto_1fr] gap-6">
+
+      {content}
+      </div>
     </div>
-  )
+  );
 }
 export default function AboutMe() {
   return (
