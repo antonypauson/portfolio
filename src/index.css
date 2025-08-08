@@ -18,6 +18,25 @@
   animation: slideIn 5s ease-out;
 }
 
+.opacity-trans {
+  animation: opacity 5s; 
+}
+
+@keyframes opacity {
+  from {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 50;
+  }
+
+  to {
+    opacity: 100; 
+  }
+}
+
+
 @keyframes translate-up-small {
   from {
     transform: translateY(0);
