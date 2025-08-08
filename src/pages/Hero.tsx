@@ -4,10 +4,17 @@ import * as THREE from "three";
 import HeadingTypewriter from "../components/HeadingTypeWriter";
 import Subheading from "../components/Subheading";
 
-export default function Hero({ iconTrue }) {
-  const vantaRef = useRef(null);
-  let vantaEffect: any;
+interface VantaEffect {
+  destroy: () => void; 
+}
 
+interface HeroProps {
+  iconTrue: boolean; 
+}
+export default function Hero({ iconTrue} : HeroProps ) {
+  const vantaRef = useRef<HTMLDivElement>(null);
+  let vantaEffect: VantaEffect | null = null;
+  
   useEffect(() => {
     if (iconTrue) {
       if (!window.THREE) {

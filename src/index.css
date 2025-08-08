@@ -22,6 +22,33 @@
   animation: opacity 5s; 
 }
 
+.underline-animate {
+  display: inline-block;
+  position: relative;
+}
+
+.underline-animate::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 3px;
+  background: #ffffff;
+  width: 0;
+  animation: underline-grow 2s ease forwards;
+}
+
+
+@keyframes underline-grow {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+
 @keyframes opacity {
   from {
     opacity: 0;

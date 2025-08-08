@@ -1,7 +1,18 @@
 import { Fragment } from "react/jsx-runtime";
 
+interface TechStackItem {
+  name: string; 
+  icon: string; 
+}
+
+interface RoadMapDataItem {
+  title: string; 
+  date: string; 
+  description: string; 
+}
+
 function SectionOne() {
-  const techStack = [
+  const techStack: TechStackItem[] = [
     { name: "HTML", icon: "/icons/html.svg" },
     { name: "CSS", icon: "/icons/css.svg" },
     { name: "JavaScript", icon: "/icons/javascript.svg" },
@@ -56,39 +67,34 @@ function SectionOne() {
 }
 
 function SectionTwo() {
-  const roadmapData = [
+  const roadmapData: RoadMapDataItem[] = [
     {
       title: "Graduated from College 1",
       date: "May 2025",
-      icon: "icons/html.svg",
       description:
         "Finished college with a CGPA of 7.86. My major was Computer Science Engineering. ",
     },
     {
       title: "Graduated from College 2",
       date: "May 2025",
-      icon: "icons/html.svg",
       description:
         "Finished college with a CGPA of 7.86. My major was Computer Science Engineering. ",
     },
     {
       title: "Graduated from College 3 ",
       date: "May 2025",
-      icon: "icons/html.svg",
       description:
         "Finished college with a CGPA of 7.86. My major was Computer Science Engineering. ",
     },
     {
       title: "Graduated from College 4",
       date: "May 2025",
-      icon: "icons/html.svg",
       description:
         "Finished college with a CGPA of 7.86. My major was Computer Science Engineering. ",
     },
     {
       title: "Graduated from College 5",
       date: "May 2025",
-      icon: "icons/html.svg",
       description:
         "Finished college with a CGPA of 7.86. My major was Computer Science Engineering. Last",
     },
@@ -121,7 +127,7 @@ function SectionTwo() {
               index > 0 &&
               (index % 2 !== 0
                 ? "icons/arrow-left.svg"
-                : "icons/arrow-right.svg")
+                : "icons/arrow-right.svg") || ""
             }
           />
         </div>
