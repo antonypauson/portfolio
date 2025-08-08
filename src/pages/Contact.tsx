@@ -24,7 +24,7 @@ export default function Contact() {
     return (
       <>
         <div className="bg-zinc-600 min-h-screen flex flex-col justify-center items-center gap-10 font-medium py-20">
-          <h4 className="md:text-7xl text-4xl text-center md:text-left img-intial-move">
+          <h4 className="md:text-7xl text-4xl text-center md:text-left img-intial-move ">
             <span className="text-stone-50 font-extrabold md:text-8xl text-6xl heading-connect">
               Connect
             </span>{" "}

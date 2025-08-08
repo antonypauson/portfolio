@@ -15,8 +15,10 @@ function SectionOne() {
     <div className="grid md:grid-cols-2 bg-zinc-600 min-h-screen pt-30 text-black text-lg gap-3 md:items-start md:px-10">
       <div className="flex flex-col justify-start gap-10 px-4 items-center mb-2">
         <h1 className="text-5xl py- md:py-0 md:text-7xl">
-          <span className="font-extrabold text-indigo-100">Hello,</span> I'm
-          Antony!
+          <span className="font-extrabold text-indigo-100 heading-connect">
+            Hello,
+          </span>{" "}
+          I'm Antony!
         </h1>
         <p className="lg:text-3xl text-justify">
           I'm a{" "}
@@ -31,15 +33,15 @@ function SectionOne() {
         </p>
       </div>
 
-      <div className="grid grid-cols-3 md:grid-cols-4 p-4 mx-auto gap-2.5 md:gap-7">
+      <div className="grid grid-cols-3 md:grid-cols-4 p-4 mx-auto gap-7.5 md:gap-7">
         {techStack.map((each) => (
           <div
             key={each.name}
-            className="bg-zinc-700 p-5 rounded-lg flex flex-col items-center justify-center md:w-24 md:h-24 w-20 h-20 lg:w-24 lg:h-24 text-sm group "
+            className="bg-zinc-700 p-5 rounded-lg flex flex-col items-center justify-center md:w-24 md:h-24 w-20 h-20 lg:w-24 lg:h-24 text-sm group"
           >
             <img
               src={each.icon}
-              className="w-11 grayscale group-hover:grayscale-0 group-hover:-translate-y-2 duration-850"
+              className="w-11 grayscale group-hover:grayscale-0 group-hover:-translate-y-2 duration-850 img-intial-move-2"
             />
             <span className="md:opacity-0 group-hover:opacity-100 text-white">
               {each.name}

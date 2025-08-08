@@ -1,40 +1,72 @@
 @import "tailwindcss";
 
 :root {
-    font-family: "Bricolage Grotesque", sans-serif;
-    --font-normal: "IBM Plex Sans", sans-serif;
+  font-family: "Bricolage Grotesque", sans-serif;
+  --font-normal: "IBM Plex Sans", sans-serif;
 }
 .img-intial-move {
-    animation: translate-up 1.2s ease;
-    animation-iteration-count: 1;
+  animation: translate-up 2s ease;
+  animation-iteration-count: 1;
+}
+
+.img-intial-move-2 {
+  animation: translate-up-small 2s ease-out;
+  animation-iteration-count: 1;
 }
 
 .heading-connect {
-    animation: slideIn 5s ease-out; 
+  animation: slideIn 5s ease-out;
+}
+
+@keyframes translate-up-small {
+  from {
+    transform: translateY(0);
+    filter: grayscale(100%);
+  }
+
+  25% {
+    transform: translateY(-15px);
+    filter: grayscale(75%);
+  }
+
+  50% {
+    transform: translate(0);
+    filter: grayscale(50%);   
+
+  }
+
+  75% {
+    transform: translateY(-10px);
+    filter: grayscale(35%);
+  }
+
+  to {
+    transform: translateY(0);
+  }
 }
 
 @keyframes translate-up {
-    from {
-        transform: translateY(0); 
-    }
+  from {
+    transform: translateY(0);
+  }
 
-    50% {
-        transform: translateY(-30px);
-    }
+  50% {
+    transform: translateY(-30px);
+  }
 
-    to {
-        transform: translateY(0);
-    }
+  to {
+    transform: translateY(0);
+  }
 }
 
 @keyframes slideIn {
-    from {
-        opacity: 0; 
-        transform: translateY(50px); 
-    }
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
 
-    to {
-        opacity: 1; 
-        transform: translateY(0); 
-    }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
