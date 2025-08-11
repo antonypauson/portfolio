@@ -1,3 +1,4 @@
+import { Component } from "react";
 import { Fragment } from "react/jsx-runtime";
 
 interface TechStackItem {
@@ -36,17 +37,17 @@ function SectionOne() {
         <p className="lg:text-3xl text-justify">
           I'm a{" "}
           <span className="font-extrabold text-indigo-100">
-            software engineer
+            software developer
           </span>{" "}
           from Kerala, India. I enjoy learning new things in the world of
           computer science. I've got my first computer when I was 18, since
           then, there is nothing in the world that interests me more. This world
-          of internet and technology has been what I am most grateful for. Swipe
-          up for knowing more about me.
+          of internet and technology has been what I am most grateful for.{" "}
+          {/* <span className="font-extrabold text-indigo-100">Swipe up </span>for knowing more about me. */}
         </p>
       </div>
 
-      <div className="grid grid-cols-3 md:grid-cols-4 p-4 mx-auto gap-7.5 md:gap-7">
+      <div className="grid grid-cols-3 md:grid-cols-4 p-4 mx-auto gap-7.5 md:gap-7 cursor-pointer">
         {techStack.map((each) => (
           <div
             key={each.name}
@@ -162,7 +163,10 @@ export default function AboutMe() {
   return (
     <>
       <SectionOne />
-      <SectionTwo />
+      {/* <SectionTwo /> */}
     </>
   );
 }
+
+// commented out "Swipe up for knowing more about me" text in first para. 
+// Also commented out SectionTwo Component

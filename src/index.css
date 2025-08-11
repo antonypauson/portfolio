@@ -8,6 +8,10 @@
   animation: translate-up 2s ease;
   animation-iteration-count: 1;
 }
+.img-intial-move-mobile {
+  animation: translate-up-small 2s ease;
+  animation-iteration-count: 1;
+}
 
 .img-intial-move-2 {
   animation: translate-up-small 2s ease-out;
@@ -70,19 +74,19 @@
     filter: grayscale(100%);
   }
 
-  25% {
+  /* 25% {
     transform: translateY(-15px);
     filter: grayscale(75%);
-  }
+  } */
 
-  50% {
+  /* 50% {
     transform: translate(0);
     filter: grayscale(50%);   
 
-  }
+  } */
 
-  75% {
-    transform: translateY(-10px);
+  50% {
+    transform: translateY(-15px);
     filter: grayscale(35%);
   }
 
@@ -98,6 +102,20 @@
 
   50% {
     transform: translateY(-30px);
+  }
+
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes translate-up-mobile {
+  from {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
   }
 
   to {

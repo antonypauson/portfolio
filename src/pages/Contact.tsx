@@ -24,7 +24,7 @@ export default function Contact() {
     return (
       <>
         <div className="bg-zinc-600 min-h-screen flex flex-col justify-center items-center gap-10 font-medium py-20">
-          <h4 className="md:text-7xl text-4xl text-center md:text-left img-intial-move ">
+          <h4 className="md:text-7xl text-3xl text-center md:text-left mx-2">
             <span className="text-stone-50 font-extrabold md:text-8xl text-6xl heading-connect">
               Connect
             </span>{" "}
@@ -41,7 +41,7 @@ export default function Contact() {
                 <div className="bg-zinc-700 p-6 rounded-3xl grid md:grid-cols-2 md:flex md:flex-col md:justify-center items-center group cursor-pointer gap-3.5 md:gap-0">
                   <img
                     src={each.icon}
-                    className="w-15 md:w-46 object-contain mb-4 grayscale-100 transform group-hover:grayscale-0 group-hover:-translate-y-5 duration-500 justify-self-center img-intial-move"
+                    className="w-15 md:w-46 object-contain mb-4 grayscale-100 transform group-hover:grayscale-0 group-hover:-translate-y-5 duration-500 justify-self-center md:img-intial-move img-intial-move-mobile"
                   />
                   <div className="justify-self-center">
                     <p className="md:opacity-0 group-hover:opacity-100 duration-600  text-white break-words">
