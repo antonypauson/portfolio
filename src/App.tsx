@@ -1,4 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { Analytics } from "@vercel/analytics/react";
 import { useState } from "react";
 import Navbar from "./components/Navbar";
 import Hero from "./pages/Hero";
@@ -18,6 +19,7 @@ export default function App() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/projects" element={<Projects />} />
       </Routes>
+      <Analytics/>
     </Router>
   );
 }
